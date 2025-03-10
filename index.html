@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Growing Flower</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+        }
+        svg {
+            width: 200px;
+            height: 300px;
+        }
+        .petal {
+            fill: pink;
+            opacity: 0.8;
+            transform-origin: center;
+            animation: glow 2s infinite alternate, grow 4s infinite alternate;
+        }
+        .stem {
+            fill: green;
+            animation: growStem 4s infinite alternate;
+        }
+        .grass {
+            fill: #228B22;
+        }
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 5px rgba(255, 105, 180, 0.5)); }
+            to { filter: drop-shadow(0 0 20px rgba(255, 105, 180, 1)); }
+        }
+        @keyframes grow {
+            from { transform: scale(0.8); }
+            to { transform: scale(1.2); }
+        }
+        @keyframes growStem {
+            from { transform: scaleY(0.8); }
+            to { transform: scaleY(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <svg viewBox="0 0 200 300">
+        <circle cx="100" cy="100" r="10" fill="yellow" />
+        <g>
+            <ellipse class="petal" cx="100" cy="60" rx="20" ry="30" />
+            <ellipse class="petal" cx="100" cy="140" rx="20" ry="30" transform="rotate(180,100,100)" />
+            <ellipse class="petal" cx="60" cy="100" rx="20" ry="30" transform="rotate(270,100,100)" />
+            <ellipse class="petal" cx="140" cy="100" rx="20" ry="30" transform="rotate(90,100,100)" />
+        </g>
+        <rect class="stem" x="95" y="150" width="10" height="100" />
+        <ellipse class="grass" cx="100" cy="260" rx="50" ry="10" />
+    </svg>
+</body>
+</html>
