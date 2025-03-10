@@ -57,3 +57,36 @@
     </svg>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon, Stars, and Flowers</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            overflow: hidden;
+        }
+        svg {
+            width: 400px;
+            height: 400px;
+        }
+        .moon {
+            fill: yellow;
+            filter: drop-shadow(0 0 10px yellow);
+        }
+        .star {
+            fill: white;
+            animation: twinkle 1.5s infinite alternate;
+        }
+        @keyframes twinkle {
+            from { opacity: 0.3; }
+            to { opacity: 1; }
+        }
+        .flower {
+            transform-origin: center;
